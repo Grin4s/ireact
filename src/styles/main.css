@@ -5,31 +5,21 @@
 
 /* Custom Animations */
 @keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
 
 @keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 /* Animation Classes */
 .shake-animation {
   animation: 
     shake 0.4s ease-in-out,
-    pulse 1s ease-in-out 0.4s; /* Комбинированная анимация */
+    pulse 1s ease-in-out 0.4s;
 }
 
 .animate-pulse {
@@ -56,6 +46,38 @@
       border-gray-200 focus:border-blue-500 focus:ring-2 
       focus:ring-blue-200;
   }
+
+  .paste-btn {
+    @apply absolute -right-20 top-1/2 -translate-y-1/2 text-sm text-blue-600 
+           hover:text-blue-700 underline transition-colors;
+  }
+
+  /* DatePicker Styles */
+  .react-datepicker-wrapper {
+    @apply w-full;
+  }
+
+  .react-datepicker__input-container input {
+    @apply w-full bg-transparent outline-none;
+  }
+
+  .react-datepicker {
+    font-family: inherit;
+    @apply border border-gray-200 rounded-lg;
+  }
+  
+
+  .react-datepicker__header {
+    @apply bg-gray-100 border-b-0;
+  }
+
+  .react-datepicker__day--selected {
+    @apply bg-blue-600 text-white;
+  }
+
+  .react-datepicker__day--keyboard-selected {
+    @apply bg-blue-400;
+  }
 }
 
 /* Base Styles */
@@ -68,10 +90,3 @@
     @apply antialiased font-sans bg-gradient-to-br from-gray-50 to-blue-50;
   }
 }
-
-@layer components {
-    .paste-btn {
-      @apply absolute -right-20 top-1/2 -translate-y-1/2 text-sm text-blue-600 
-             hover:text-blue-700 underline transition-colors;
-    }
-  }
